@@ -1,0 +1,23 @@
+<div>
+    <div class="row">
+        <div class="col col-md-6">
+            <mat-card>
+                <mat-card-header>
+                    <h4>Account Details</h4>
+                </mat-card-header>
+                <mat-card-content>
+                    <b>Description : </b>{{Share.Description}}<br />
+                    <b>ID : </b>{{Share.Id}}<br />
+                    <b>Balance : </b>{{Share.Balance | currency: 'USD'}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-transaction-list></app-transaction-list>         
+        </div>
+    </div>
+</div>

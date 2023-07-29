@@ -1,0 +1,19 @@
+<div>
+    <div class="row">
+        <div class="col">
+            <h2>
+                {{Question?.Text}}
+            </h2>
+        </div>
+    </div>
+    <div class="row" *ngIf="Question?.Qualifier">
+        <h3 class="mb-2">Select the loan you would like assistance with :</h3>
+        <ul class="list list-unstyled list-inline">
+            <li class="list-inline-item" *ngFor="let l of Account?.Loans">
+                <button mat-flat-button color="primary" [ngClass]="Criteria==l.Id ? 'selected' : ''" (click)="setCriteria('L', l.Id)" class="mb-2">
+                    {{l.Id}} - {{l.Description}} ({{l.Balance | currency: 'USD'}})
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

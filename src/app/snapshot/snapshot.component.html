@@ -1,0 +1,32 @@
+<div>
+    <div class="row">
+        <div class="col col-md-6">
+            <mat-card>
+                <mat-card-header>
+                    <h4>Account Details</h4>
+                </mat-card-header>
+                <mat-card-content>
+                    <b>Member # : </b>{{Account?.MemberNumber}}<br />
+                    <b>Name : </b>{{Account?.Prime?.First}} {{Account?.Prime?.Last}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col">
+            <!--{{Result}} -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-3">
+            <mat-tab-group>
+                <mat-tab label="S{{s.Id}} - {{s.Description}}" *ngFor="let s of Account?.Shares">
+                    <ng-template matTabContent>
+                        <app-share-view [Share]="s"></app-share-view>
+                    </ng-template>
+                </mat-tab>
+                <mat-tab label="L{{l.Id}} - {{l.Description}}" *ngFor="let l of Account?.Loans">
+
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
